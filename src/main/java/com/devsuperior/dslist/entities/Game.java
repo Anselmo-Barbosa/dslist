@@ -54,9 +54,11 @@ public class Game {
     public String getPlatforms() {
         return platforms;
     }
+
     public Double getScore() {
         return score;
     }
+
     public String getImgUrL() {
         return imgUrL;
     }
@@ -103,6 +105,10 @@ public class Game {
 
     public void setScore(Double score) {
         this.score = score;
+    }
+
+
+    public Game(){
     }
 
     @Override

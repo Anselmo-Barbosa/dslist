@@ -2,6 +2,8 @@ package com.devsuperior.dslist.repository;
 
 import com.devsuperior.dslist.entities.Game;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface GameReposity extends JpaRepository<Game,Long> {
+@Repository
+public interface GameRepository extends JpaRepository<Game,Long> {
 }
