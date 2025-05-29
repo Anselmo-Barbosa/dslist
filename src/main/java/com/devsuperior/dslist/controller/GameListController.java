@@ -1,6 +1,5 @@
 package com.devsuperior.dslist.controller;
 
-import com.devsuperior.dslist.dto.GameDTO;
 import com.devsuperior.dslist.dto.GameListDTO;
 import com.devsuperior.dslist.dto.GameMinDTO;
 import com.devsuperior.dslist.service.GameListService;
@@ -20,10 +19,17 @@ public class GameListController {
     //Conectando essa camada com a camada inferior
     @Autowired
     private GameListService gameListService;
+    @Autowired
+    private GameService gameService;
 
     @GetMapping
     public List<GameListDTO> findAll() {
         List<GameListDTO> result = gameListService.findAll();
+        return result;
+    }
+    @GetMapping("/{listId}/games")
+    public List<GameMinDTO> findByList(@PathVariable Long listId) {
+        List<GameMinDTO> result = gameService.findByList(listId);
         return result;
     }
 }

@@ -17,12 +17,12 @@ import java.util.List;
 @Service
 public class GameListService {
 
-    //Services está chamando Repository (Injeytando dependencia)
+    //Services está chamando Repository (Injetando dependencia)
     //ou seja, é uma conecção com a camada inferior por meio de um estanciamento
     @Autowired
     private GameListRepository gameListRepository ;
 
-    //Diz pro DP que essa é uma operação apenas de leitura
+    //Diz pro BD que essa é uma operação apenas de leitura
     @Transactional(readOnly = true)
     public List<GameListDTO> findAll() {
         List<GameList> result = gameListRepository.findAll();
